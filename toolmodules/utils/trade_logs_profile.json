@@ -1,0 +1,186 @@
+{
+    "cpuinfo": {
+        "AMD EPYC 7742 64-Core Processor": 2.25,
+        "AMD EPYC 7662 64-Core Processor": 2.0,
+        "AMD EPYC 7713 64-Core Processor": 2.0,
+        "AMD EPYC 7713P 64-Core Processor": 2.0,
+        "AMD EPYC 7453 28-Core Processor": 2.75,
+        "AMD EPYC 7H12 64-Core Processor": 2.6,
+        "AMD EPYC 7452 32-Core Processor": 2.35,
+        "Intel(R) Xeon(R) Gold 6258R CPU @ 2.70GHz": 2.7,
+        "Intel(R) Xeon(R) Platinum 8268 CPU @ 2.90GHz": 2.9,
+        "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz": 3.1,
+        "Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz": 3.0,
+        "Intel(R) Xeon(R) Gold 6354 CPU @ 3.00GHz": 3.0
+    },
+    "jumper_info": {
+        "username": "jumper",
+        "host": "139.196.57.140",
+        "port": 22,
+        "parsed_log": "/home/jumper/trade_log/data"
+    },
+    "machines": {
+        "ct-sh-13": {
+            "jumper_info": {
+                "username": "jumper",
+                "host": "139.196.57.140",
+                "port": 22,
+                "parsed_log": "/home/jumper/trade_log/data"
+            }
+        }
+    },
+    "SpecialCare": {
+        "types": {
+            "T0_SwapProduction": [
+                "HAIJING", "ZJDC12", "ZJDC8"
+            ],
+            "Production_OwnList": [
+                    "DC19",
+                    "ZXDC19",
+                    "JT1",
+                    "YX1",
+                    "ZJJT1",
+                    "ZJJT2",
+                    "GDYPA",
+                    "GDDC19",
+                    "GDDC19B"
+            ]
+        },
+        "DisplayColumns": [
+            "production", "type", "colo", "stid", "总订单", "插单延迟(SZ_broker median)", "插单延迟API(SZ_broker median)",
+            "插单延迟(SZ_exch median)", "插单延迟API(SZ_exch median)", "插单延迟(SZ_exch_buy median)", "插单延迟API(SZ_exch_buy median)",
+            "插单延迟(SZ_exch_sell median)", "插单延迟API(SZ_exch_sell median)", 
+            "production", "type", "colo", "成交延迟API(SZ)", "插单延迟(SH_broker median)",
+            "插单延迟API(SH_broker median)", "插单延迟(SH_exch median)", "插单延迟API(SH_exch median)", "成交延迟API(SH)",
+            "production", "type", "colo", "撤单股数比(SZ)", "撤单金额比(SZ)", "撤单股数比(SH)", "撤单金额比(SH)", "撤单股数比",
+            "撤单金额比", "SH_tick2trade(median)", "SZ_tick2trade(median)"
+        ]
+    },
+    "exception": {
+        "SZ_tick2trade(median)": {
+            "upper": 0.18,
+            "drift_ratio": 1
+        },
+        "SH_tick2trade(median)": {
+            "upper": 1.8,
+            "drift_ratio": 2
+        },
+        "撤单金额比(SZ)": {
+            "drift_ratio": 0.6
+        },
+        "撤单金额比(SH)": {
+            "drift_ratio": 0.6
+        }
+    },
+    "worker_download": [
+        "ct-sz-11"
+    ],
+    "worker_download.old": [
+        "gj-sh-4",
+        "gj-sz-4"
+    ],
+    "trader_err_code_map": {
+        "trader1": {
+            "27": "资金不足",
+            "28": "股份不足",
+            "127": "该账户未登录",
+            "1182": "可用数量小于最低卖出数量必须全部卖出",
+            "1183": "卖出零股数量与可用数量的零股数量不相同",
+            "1187": "卖出资金小于费用，不允许交易",
+            "1002": "废单",
+            "300028": "账户持有股份不足"
+        },
+        "trader2": {
+            "507": "未通过白名单检查",
+            "502": "防对敲控制",
+            "509": "价格偏离度控制",
+            "523": "拉台打压风控",
+            "517": "证券持仓数量控制"
+        },
+        "trader3": {
+            "251005": "股份不足",
+            "260200": "可用资金不足"
+        },
+        "trader4": {
+            "11100000": "订单被交易所拒绝"
+        },
+        "traderDMA": {
+            "111049": "仓位不足"
+        },
+        "traderHuaXin": {
+            "-2": "超过流速权",
+            "322": "申报量超出单笔申报限制",
+            "360": "资金不足",
+            "361": "数量不足",
+            "403": "投资者代码与账户不一致",
+            "421": "超出买入上限",
+            "433": "华鑫Dma 大账户内部风控-自成交"
+        }
+    },
+    "err_code_map": {
+        "csc": "trader1",
+        "gj": "trader1",
+        "gx": "trader1",
+        "gf": "trader1",
+        "htsc": "trader1",
+        "htsc-sz-5": "trader2",
+        "ct": "trader3",
+        "cicc": "trader1",
+        "zt": "trader4",
+        "citic": "trader1",
+        "cfipasz1": "trader1",
+        "gx-sz-5": "traderDMA",
+        "cf": "traderHuaXin"
+    },
+    "notify": {
+        "email": {
+            "smtp_server": "smtp.exmail.qq.com",
+            "account": "andrewyan@centuryfrontier.com",
+            "passwd": "gZ3sMDxLRgN5cFki",
+            "sendto": [
+                "luom@centuryfrontier.com",
+                "1026688756@qq.com",
+                "zhzhou@centuryfrontier.com",
+                "hyanak@centuryfrontier.com",
+                "24085778@qq.com",
+                "471743716@qq.com",
+                "andrewyan@centuryfrontier.com",
+                "sun@centuryfrontier.com",
+                "wenzan@centuryfrontier.com",
+                "rczhao@centuryfrontier.com",
+                "ritchguo@centuryfrontier.com",
+                "yang@centuryfrontier.com",
+                "duanlian@centuryfrontier.com"
+            ],
+            "sendto1": [
+                "duanlian@centuryfrontier.com",
+                "andrewyan@centuryfrontier.com"
+            ]
+        }
+    },
+    "err_notify": [
+        "luom@centuryfrontier.com",
+        "zhzhou@centuryfrontier.com",
+        "hyanak@centuryfrontier.com",
+        "471743716@qq.com",
+        "24085778@qq.com",
+        "rczhao@centuryfrontier.com",
+        "andrewyan@centuryfrontier.com",
+        "matt@centuryfrontier.com",
+        "ritchguo@centuryfrontier.com"
+    ],
+    "local_path": {
+        "PTA_ROOT": "/data",
+        "report": "/data/PTA/report",
+        "parsed_log": "/data/PTA/parsed_log",
+        "alpha_trade_extract": "/data/PTA/ExtractRawData/alpha_trade",
+        "alpha_trade_proceed": "/data/PTA/ProcessedData/alpha_trade",
+        "chart": "/data/PTA/chart"
+    },
+    "nas_path": {
+        "report": "/mnt/nas-3.old/ProcessedData/PTA/report",
+        "parsed_log": "/mnt/nas-3.old/ProcessedData/PTA/parsed_log",
+        "chart": "/mnt/nas-3.old/ProcessedData/PTA/chart"
+    }, 
+    "nas_raw_dir": "/mnt/nas-3.old/RawData/PTA"
+}
